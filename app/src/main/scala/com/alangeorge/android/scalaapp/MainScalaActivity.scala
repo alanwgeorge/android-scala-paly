@@ -26,9 +26,7 @@ class MainScalaActivity extends AppCompatActivity {
 
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     val id: Int = item.getItemId
-    if (id == R.id.action_settings) {
-      return true
-    }
-    super.onOptionsItemSelected(item)
+    if (id == R.id.action_settings) true
+    else super.onOptionsItemSelected(item)
   }
 }
