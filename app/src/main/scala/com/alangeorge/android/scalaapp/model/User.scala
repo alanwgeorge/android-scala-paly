@@ -1,0 +1,18 @@
+package com.alangeorge.android.scalaapp.model
+
+trait User {
+  def name: String
+  def score: Int
+}
+
+class FreeUser(val name: String, val score: Int, val upgradeProbability: Double) extends User
+class PremiumUser(val name: String, val score: Int) extends User
+
+object FreeUser {
+  def unapply(user: FreeUser): Option[(String, Int, Double)] = Some((user.name, user.score, user.upgradeProbability))
+}
+
+object PremiumUser {
+  def unapply(user: PremiumUser): Option[(String, Int)] = Some((user.name, user.score))
+}
+
